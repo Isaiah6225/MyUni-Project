@@ -12,7 +12,7 @@ function App() {
         <Routes>
           {/* <Route index element={<LoginSignUp/>}/>
           <Route path="/login" element={<LoginSignUp/>}/> */}
-          <Route path="/" element={true?<Home/>:<LoginSignUp/>}/>
+          <Route path="/*" element={true?<Home/>:<LoginSignUp/>}/>
         </Routes>
     </div>
   )

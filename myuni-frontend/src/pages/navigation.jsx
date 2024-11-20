@@ -5,28 +5,27 @@ import logoImage from '../images/MyUni_logo.png';
 import { navigationMenu } from './NavigationMenu';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { Avatar } from '@mui/material';
+import { Avatar, Menu, MenuItem, IconButton } from "@mui/material";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import {useSate} from 'react';
 
 const Navigation = () => {
-  // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  // const open = Boolean(anchorEl);
-
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
-
   const navigate = useNavigate();
-  // const handleLogout = () => {
-  //   console.log("logout");
-  //   handleClose();
-  // };
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLogOut = () => {
+    console.log("logout");
+    handleClose();
+  };
+
   console.log('navigationMenu:', navigationMenu);
 
   return (
@@ -70,26 +69,27 @@ const Navigation = () => {
           <div>
             <span className="opacity-70">@Username</span>
           </div>
-          {/* <Button
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <MoreHorizIcon />
-          </Button>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleLogout}>Logout</MenuItem>
-          </Menu> */}
+          <div>
+              {/* IconButton with MoreHoriz Icon */}
+              <IconButton
+                aria-controls="menu"
+                aria-haspopup="true"
+                onClick={handleClick}
+              >
+                <MoreHorizIcon />
+              </IconButton>
+              <Menu
+                id="menu"
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                
+                <MenuItem onClick={handleLogOut}>
+                  Log Out 
+                </MenuItem>
+              </Menu>
+            </div>
         </div>
       </div>
     </div>

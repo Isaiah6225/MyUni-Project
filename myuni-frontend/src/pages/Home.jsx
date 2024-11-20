@@ -1,52 +1,69 @@
 
 import React from 'react';
-import { Grid2 } from '@mui/material';
 import Navigation from './navigation';
 import HomeSection from './HomeSection';
-import RightPart  from './RightPart';
+import RightPart from './RightPart';
+import Grid from '@mui/material/Grid2';
+import { Routes, Route } from 'react-router-dom';
+import Profile from './profile';
 
 const Home = () => {
   return (
-    <Grid2 container spacing={25}  className="px-5 lg:px-36">
+    <Grid
+      container
+      className="px-5 lg:px-36"
+      style={{ height: '100vh', display: 'flex', flexWrap: 'nowrap' }}
+    >
       {/* Left Part */}
-      <Grid2 item xs={6} lg={2.5} className="hidden lg:block text-center" style={{ paddingRight: '20px' }}>
+      <Grid
+        xs={0} // Hidden on small screens
+        lg={1}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          paddingRight: '20px',
+        }}
+      >
         <Navigation />
-      </Grid2>
-      
+      </Grid>
+
       {/* Middle Part */}
-      <Grid2 item xs={6} lg={6} className="text-center" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
-        <HomeSection/>
-      </Grid2>
-      
+      <Grid
+        xs={12}
+        lg={10}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          padding: '0 20px',
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<HomeSection/>}></Route>
+          <Route path="/profile/:id" element={<Profile/>}></Route>
+        </Routes>
+       
+      </Grid>
+
       {/* Right Part */}
-      <Grid2 item xs={6} lg={3} className="hidden lg:block text-center" style={{ paddingLeft: '20px' }}>
-        <RightPart/>
-      </Grid2>
-    </Grid2>
+      <Grid
+        xs={0} // Hidden on small screens
+        lg={1}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          paddingLeft: '20px',
+        }}
+      >
+        <RightPart />
+      </Grid>
+    </Grid>
   );
 };
 
 export default Home;
-
-
-
-// const Home = () => {
-//   return (
-//     <Grid2 container spacing={2} className="px-5 lg:px-36">
-//       {/* Left Part */}
-//       <Grid2 item xs={12} lg={2.5} className="hidden lg:block text-center" style={{ alignSelf: 'flex-start' }}>
-//         <Navigation />
-//       </Grid2>
-      
-//       {/* Middle Part */}
-//       <Grid2 item xs={12} lg={6} className="text-center" style={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-//         <p>Middle part</p>
-//       </Grid2>
-      
-//       {/* Right Part */}
-//       <Grid2 item xs={12} lg={3} className="hidden lg:block text-center" style={{ alignSelf: 'flex-end' }}>
-//         <p>Right part</p>
-//       </Grid2>
-//     </Grid2>
-//   );
-// };

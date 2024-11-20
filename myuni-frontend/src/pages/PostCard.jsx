@@ -53,8 +53,8 @@ const PostCard = () => {
         <div className="w-full">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2 cursor-pointer">
-              <span className="font-semibold">Username</span>
-              <span className="text-gray-600">@username . 2m</span>
+              <span className="font-semibold text-sm">Username</span>
+              <span className="text-gray-600 text-xs">@username . 2m</span>
             </div>
             <div>
               {/* IconButton with MoreHoriz Icon */}
@@ -92,24 +92,24 @@ const PostCard = () => {
             </div>
             <div className="py-5 flex flex-wrap justify-between items-center">
               <div className="space-x-3 flex items-center text-gray-600">
-                <ChatBubbleOutlineIcon className="cursor-pointer" onClick={handleOpenReplyModel}/>
+                <ChatBubbleOutlineIcon className="cursor-pointer text-sm" onClick={handleOpenReplyModel}/>
                 <p>43</p>
               </div>
               <div className={`${true? "text-pink-600":"text-gray-600"} space-x-3 flex item-center`}>
-                <RepeatIcon onClick={handleCreateRepost} className="cursor-pointer"/>
+                <RepeatIcon onClick={handleCreateRepost} className="cursor-pointer text-sm"/>
                 <p>54</p>
 
               </div>
               <div className={`${true? "text-pink-600":"text-gray-600"} space-x-3 flex item-center`}>
-                {true? <FavoriteIcon onClick={handleLikePost} className="cursor-pointer"/> : <FavoriteBorderIcon onClick={handleLikePost} className="cursor-pointer"/>}
+                {true? <FavoriteIcon onClick={handleLikePost} className="cursor-pointer text-xs"/> : <FavoriteBorderIcon onClick={handleLikePost} className="cursor-pointer"/>}
                 <p>54</p>
               </div>
-              <div className="space-x-3 flex items-center text-gray-600">
-                <BarChartIcon className="cursor-pointer" onClick={handleOpenReplyModel}/>
+              {/* <div className="space-x-3 flex items-center text-gray-600">
+                <BarChartIcon className="cursor-pointer text-xs" onClick={handleOpenReplyModel}/>
                 <p>430</p>
-              </div>
+              </div> */}
               <div className="space-x-3 flex items-center text-gray-600">
-                <FileUploadIcon className="cursor-pointer" onClick={handleOpenReplyModel}/>
+                <FileUploadIcon className="cursor-pointer text-xs" onClick={handleOpenReplyModel}/>
               </div>
 
 
