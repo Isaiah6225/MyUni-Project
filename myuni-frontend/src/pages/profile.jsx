@@ -6,12 +6,13 @@ import { Button } from "@mui/material";
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import ListSubheader from '@mui/material/ListSubheader';  // Correct
+import PostCard from './PostCard';
 
 const Profile = () => {
   const navigation = useNavigate();
@@ -36,7 +37,7 @@ const Profile = () => {
   }
   return (
     <div>
-      <section className="z-50 flezx items-center sticky top-0 bg-opacity-95">
+      <section className="bg-white z-50 flezx items-center sticky top-0 bg-opacity-95">
         <KeyboardBackspaceIcon
           className="cursor-pointer"
           onClick={handleBack}
@@ -113,7 +114,7 @@ const Profile = () => {
             </div>
         </div>
       </section>
-      <section>
+      <section className='py-5'>
       <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={tabValue}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -125,7 +126,7 @@ const Profile = () => {
 
           </TabList>
         </Box>
-        <TabPanel value="1">Posts</TabPanel>
+        <TabPanel value="1">{[1,1].map((item)=><PostCard/>)}</TabPanel>
         <TabPanel value="2">Comments</TabPanel>
         <TabPanel value="3">Media</TabPanel>
         <TabPanel value="4">Likes</TabPanel>

@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import logoImage from '../images/MyUni_logo.png';
 import { navigationMenu } from './NavigationMenu';

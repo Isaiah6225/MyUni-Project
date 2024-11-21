@@ -82,7 +82,7 @@ const PostCard = () => {
             </div>
           </div>
           <div className="mt-2">
-            <div className="cursor-pointer">
+            <div onClick={()=>navigate(`post/${3}`)}className="cursor-pointer">
               <p className="mb-2 p-0">Some text here that is meaningful</p>
               <img
                 className="w-[15rem] border border-gray-400 p-2 rounded-md"

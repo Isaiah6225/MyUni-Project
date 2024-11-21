@@ -6,6 +6,7 @@ import RightPart from './RightPart';
 import Grid from '@mui/material/Grid2';
 import { Routes, Route } from 'react-router-dom';
 import Profile from './profile';
+import PostDetails from './PostDetails';
 
 const Home = () => {
   return (
@@ -43,7 +44,10 @@ const Home = () => {
       >
         <Routes>
           <Route path="/" element={<HomeSection/>}></Route>
+          <Route path="/home" element={<HomeSection/>}></Route>
           <Route path="/profile/:id" element={<Profile/>}></Route>
+          <Route path="/post/:id" element={<PostDetails/>}></Route>
+
         </Routes>
        
       </Grid>
