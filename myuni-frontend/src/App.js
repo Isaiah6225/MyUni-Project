@@ -15,14 +15,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/login" element={<LoginSignUp setAuth={setIsAuthenticated} />} />
-        <Route
-          path="/*"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
+
       </Routes>
     </div>
   );
